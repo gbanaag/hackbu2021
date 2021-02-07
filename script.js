@@ -26,6 +26,7 @@ function enc(){
 
   }
   console.log(newPass);
+  alert("your password is " + newPass);
 }
 
 function dec(pass, key){
