@@ -4,8 +4,143 @@
 
 html {
   scroll-behavior: smooth;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  font-family: "Spartan", sans-serif;
+}
+
+body {
+  background-color: #423582;
 }
 
 h1 {
-  font-family: 'Raleway', sans-serif;
+  margin-top: 2vw;
+  margin-bottom: 2vw;
+}
+
+#everything {
+  filter: drop-shadow(8px 10px 64px rgba(0, 0, 0, 0.1));
+  margin-top: 10vw;
+  background-color: white;
+  padding: 5vw;
+  border-radius: 2vw;
+}
+
+input[type="text"] {
+  padding: 1vw;
+  background-color: #f2f2f2;
+  border: none;
+  filter: drop-shadow(8px 10px 64px rgba(0, 0, 0, 0.1));
+  border-radius: 40vw;
+  transition: 0.3s;
+  width: 20vw;
+}
+
+input[type="text"]:focus {
+  padding: 1vw;
+  background-color: #e3e3e3;
+  outline: none;
+}
+
+.btn-1 {
+  font-family: "Spartan", sans-serif;
+  background: #0F0F6D;
+  color: #ffffff;
+  cursor: pointer;
+  font-size: 1vw;
+  padding: 1.5rem;
+  border: 0;
+  transition: all 0.5s;
+  border-radius: 10px;
+  width: auto;
+  position: relative;
+}
+
+.btn-1:before {
+/*   content: "fs in the chat"; */
+}
+
+.btn-1:after {
+/*   content: "shit"; */
+  font-weight: 400;
+  position: absolute;
+  left: 85%;
+  top: 31%;
+  right: 5%;
+  bottom: 0;
+  opacity: 0;
+}
+
+.btn-1:hover {
+  background: #2b2ba1;
+  transition: all 0.5s;
+  border-radius: 10px;
+  box-shadow: 0px 6px 15px #0000ff61;
+  padding: 1.5rem 3.5rem 1.5rem 1.5rem;
+
+  .btn-1 :after {
+    opacity: 1;
+    transition: all 0.5s;
+  }
+}
+
+.btn-1:after {
+  content: '»';
+/*   position: absolute;
+  opacity: 0;
+  top: 14px;
+  right: -20px;
+  transition: 0.5s; */
+}
+
+
+
+button:hover span {display:none}
+#enc:hover:before {content:"Encrypt →"}
+#dec:hover:before {content:"Decrypt →"}
+
+.blob {
+  position: absolute;
+  top: 0;
+  left: 0;
+  fill: #6150b5;
+  width: 50vmax;
+  z-index: -1;
+  animation: move 10s ease-in-out infinite;
+  transform-origin: 50% 50%;
+}
+
+@keyframes move {
+  0%   { transform: scale(1)   translate(10px, -30px); }
+  38%  { transform: scale(0.8, 1) translate(80vw, 30vh) rotate(160deg); }
+  40%  { transform: scale(0.8, 1) translate(80vw, 30vh) rotate(160deg); }
+  78%  { transform: scale(1.3) translate(0vw, 50vh) rotate(-20deg); }
+  80%  { transform: scale(1.3) translate(0vw, 50vh) rotate(-20deg); }
+  100% { transform: scale(1)   translate(10px, -30px); }
+}
+
+.blob2 {
+  position: absolute;
+  top: 0;
+  left: 0;
+  fill: #7b67db;
+  width: 50vmax;
+  z-index: -1;
+  animation: move2 10s ease-in-out infinite;
+  transform-origin: 50% 50%;
+}
+
+@keyframes move2 {
+  0%   { transform: scale(1) translate(500px, 300px);}
+  38%  { transform: scale(0.8, 1) translate(10px, -30px); }
+  40%  { transform: scale(0.8, 1) translate(10px, -30px)) rotate(160deg); }
+  78%  { transform: scale(1.3) translate(80vw, 30vh) rotate(160deg);}
+  80%  { transform: scale(1.3) translate(80vw, 30vh) rotate(-20deg);  }
+  100% { transform: scale(1)   translate(500px, 300px) rotate(-20deg);  }
+}
+
+
+#everything {
+  display: none;
 }

@@ -1,4 +1,4 @@
-function enc(){
+function enc() {
   var name = document.getElementById("uname").value;
   console.log(name);
   var alphabet = "abcdefghijklmnopqrstuvwxyz123456789";
@@ -6,30 +6,30 @@ function enc(){
   var key = name.substring(0, 3);
   var newPassword = "null";
   var newPass = "";
-  var numkey = alphabet.indexOf(key.substring(0,1)) + alphabet.indexOf(key.substring(1,2)) + alphabet.indexOf(key.substring(2,3));
+  var numkey =
+    alphabet.indexOf(key.substring(0, 1)) +
+    alphabet.indexOf(key.substring(1, 2)) +
+    alphabet.indexOf(key.substring(2, 3));
   //console.log(numkey);
-  for(var i=0; i<pass.length; i++){
-  var numLetter = alphabet.indexOf(pass.substring(i,i+1));
-  //console.log(numLetter);
-    if (numLetter == -1){
-        newPass = newPass + " ";
+  for (var i = 0; i < pass.length; i++) {
+    var numLetter = alphabet.indexOf(pass.substring(i, i + 1));
+    //console.log(numLetter);
+    if (numLetter == -1) {
+      newPass = newPass + " ";
+    } else {
+      numLetter = numkey + numLetter + i;
+      while (numLetter > 34) {
+        numLetter = numLetter - 34;
+      }
+      //  console.log(alphabet.substring(numLetter, numLetter + 1));
+      newPass = newPass + alphabet.substring(numLetter, numLetter + 1);
     }
-    else{
-    numLetter = numkey + numLetter + i;
-    while(numLetter > 34 )
-    {
-      numLetter = numLetter - 34;
-    }
-  //  console.log(alphabet.substring(numLetter, numLetter + 1));
-    newPass = newPass + alphabet.substring(numLetter, numLetter + 1);
-    }
-
   }
   console.log(newPass);
   alert("your password is " + newPass);
 }
 
-function dec(pass, key){
+function dec(pass, key) {
   var name = document.getElementById("uname").value;
   console.log(name);
   var alphabet = "abcdefghijklmnopqrstuvwxyz123456789";
@@ -38,22 +38,37 @@ function dec(pass, key){
   var newPassword = "null";
   var newPass = "";
   var newPass = "";
-  var numkey = alphabet.indexOf(key.substring(0,1)) + alphabet.indexOf(key.substring(1,2)) + alphabet.indexOf(key.substring(2,3));
-  for(var i=0; i<pass.length; i++){
-    var numLetter = alphabet.indexOf(pass.substring(i,i+1));
+  var numkey =
+    alphabet.indexOf(key.substring(0, 1)) +
+    alphabet.indexOf(key.substring(1, 2)) +
+    alphabet.indexOf(key.substring(2, 3));
+  for (var i = 0; i < pass.length; i++) {
+    var numLetter = alphabet.indexOf(pass.substring(i, i + 1));
     //console.log(alphabet.indexOf(pass.substring(i,i+1)));
-    if (numLetter == -1){
-        newPass = newPass + " ";
-    }
-    else{
+    if (numLetter == -1) {
+      newPass = newPass + " ";
+    } else {
       numLetter = numLetter - numkey - i;
-    //  console.log(numLetter);
-      while(numLetter < 0 )
-      {
+      //  console.log(numLetter);
+      while (numLetter < 0) {
         numLetter = 34 + numLetter;
       }
       newPass = newPass + alphabet.substring(numLetter, numLetter + 1);
     }
   }
   console.log(newPass);
+}
+
+var myVar;
+
+function loadPage() {
+  myVar = setTimeout(showPage, 3000);
+}
+
+function showPage() {
+      $("#loading").fadeOut();
+    $("#everything").fadeIn();
+  document.getElementById("loading").style.display = "none";
+  document.getElementById("everything").style.display = "block";
+  // document.body.style.backgroundColor = "white";
 }
