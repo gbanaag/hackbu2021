@@ -26,7 +26,7 @@ function enc() {
     }
   }
   console.log(newPass);
-  alert("your password is " + newPass);
+  alert("your encrypted password is " + newPass);
 }
 
 function dec(pass, key) {
@@ -57,6 +57,7 @@ function dec(pass, key) {
     }
   }
   console.log(newPass);
+  alert("your decrypted password is " + newPass);
 }
 
 var myVar;
